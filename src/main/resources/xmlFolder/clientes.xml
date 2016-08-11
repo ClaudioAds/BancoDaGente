@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <usuario  cpf_cnpj="41851370" rg="1234567" nome="Joseph" email="jsantos.te@gmail.com" tipo="cliente" data_nascimento="01/02/1990" uf="Pb" cidade="cajazeiras" rua="Francisco" numero="200"  senha="123"/>
+    <usuario  cpf_cnpj="12345678" rg="123456789" nome="Jose" email="jsantos@gmail.com" tipo="admin" data_nascimento="01/02/1990" uf="Pb" cidade="cajazeiras" rua="Francisco" numero="200"  senha="123"/>
+</dataset>

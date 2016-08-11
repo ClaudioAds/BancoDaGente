@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cadastro Conta</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+
+        <div id="container">
+            <div class="menuTopo">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">Banco Da Gente</a>
+                        </div>
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="home.jsp">Home</a></li>
+                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Cadastros <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="cadastro.html">Cadastrar Usuarios</a></li>
+                                    <li><a href="CadastroAgencia.html">Cadastrar Agencias</a></li>
+                                    <li><a href="CadastroConta.html">cadastrar Contas</a></li>
+                                </ul>
+                            </li>                            
+                            <li><a href="ControladorUsuarios?acao=listar">Listar Usuarios</a></li>
+                            <li><a href="ControladorAgencias?acao=listar">Listar Agencias</a></li>
+
+                        </ul>
+                        <% Usuario usuarioAutenticado = (Usuario) session.getAttribute("usuarioAutenticado");%> 
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span><label><%= usuarioAutenticado.getNome()%></label></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="Logout">Sair</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+            <form action="ContaSalva.jsp" class="form-horizontal" role="form" method="Post">
+                <fieldset>
+                    <legend><h2><span class="glyphicon glyphicon-usd" aria-hidden="true"></span>Cadastrar Conta</h2></legend>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="numero">Número:</label>  
+                        <div class="col-md-10">
+                            <input id="numero" name="numero" type="text" placeholder="digite o numero da conta..." class="form-control input-md" required="">
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="data">Data/Abertura:</label>
+                        <div class="col-sm-5">
+                            <input type="date" name="data" class="form-control" id="data">
+                        </div>
+                    </div>
+  
+                    <div class="form-group" id="botoes">
+                        <div class="col-md-4">
+                            <button type ="submit" id="concluir" name="concluir" class="btn btn-success">Concluir</button>
+                            <button id="cancelar"  name="cancelar" class="btn btn-danger">Cancelar</button>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+            <footer class="rodape">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+
+                        </div>
+                        <a class="navbar-brand" href="index.html">Banco da Gente &copy;</a>
+                    </div>
+                </nav>
+            </footer>
+       
+        <style>
+
+            .form-horizontal {
+                
+                background: repeating-linear-gradient;
+                margin-top: 80px
+            }
+            
+            #botoes{
+                margin-left: 180px
+            } 
+
+
+        </style>
+
+    </body>
+</html>
